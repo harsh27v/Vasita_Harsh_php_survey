@@ -15,8 +15,11 @@ No installation required, simply download the zip file and extract.
 
 ## 🕒 History
 PHP Assignment - Survey Form
+
 Created survey form using HTML, CSS, and PHP.
+
 It also included form validation and error messages.
+
 I used PHP functions in it for checking the lengths of answer and submitted info.
 
 ## Credits
