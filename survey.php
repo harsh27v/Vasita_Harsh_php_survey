@@ -44,6 +44,26 @@ $_SESSION['form_errors'] = [];
             <p>This is the lifestyles and daily habits survey. Tell me your interests by answering the following questions. Thank you for sending your interests.</p>
         </div>
     </header>
+    <main class="center-grid-con">
+        
+    <form action="includes/scripts/process_survey_form.php" method="POST" class="col-span-full">
+        <section class="form-section">
+            <h2>Identifying Information</h2>
+            <div>
+                <?php
+                    if (array_key_exists('name', $errors)) {
+                        echo '<p style="color:red">' . $errors['name'] . '</p>';
+                        }
+                ?>
+                <label for="name">1. What's your Name?</label>
+                <input id="name" name="name" type="text" placeholder="Enter your name"
+                    <?php
+                        if (count($errors) > 0 && $submittedName) {
+                            echo 'value="' . $submittedName . '"';
+                        }
+                    ?>
+                >
+            </div>
 
 
     
