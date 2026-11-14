@@ -289,6 +289,50 @@ $_SESSION['form_errors'] = [];
                     <label for="walk">Going for a walk</label>
                     <input id="walk" type="radio" name="relax" value="Going for a walk">
                 </fieldset>
+                <fieldset>
+                    <?php
+                        if (array_key_exists('travel', $errors)) {
+                            echo '<p style="color:red">' . $errors['travel'] . '</p>';
+                        }
+                    ?>
+                    <legend>14. How often do you travel?</legend>
+
+                    <label for="travel_often">Very often</label>
+                    <input id="travel_often" type="radio" name="travel" value="Very often">
+
+                    <label for="travel_sometimes">Sometimes in year</label>
+                    <input id="travel_sometimes" type="radio" name="travel" value="Sometimes in year">
+
+                    <label for="travel_yearly">Once a year</label>
+                    <input id="travel_yearly" type="radio" name="travel" value="Once a year">
+
+                    <label for="travel_rarely">Rarely</label>
+                    <input id="travel_rarely" type="radio" name="travel" value="Rarely">
+                </fieldset>
+
+                <fieldset>
+                    <?php
+                        if (array_key_exists('weekend', $errors)) {
+                            echo '<p style="color:red">' . $errors['weekend'] . '</p>';
+                        }
+                    ?>
+                    <legend>15. How do you usually spend your weekends?</legend>
+
+                    <label for="stay_home">Staying at home</label>
+                    <input id="stay_home" type="radio" name="weekend" value="Staying at home">
+
+                    <label for="weekend_friends">Meeting friends</label>
+                    <input id="weekend_friends" type="radio" name="weekend" value="Meeting friends">
+
+                    <label for="weekend_outdoors">Going outdoors</label>
+                    <input id="weekend_outdoors" type="radio" name="weekend" value="Going outdoors">
+
+                    <label for="weekend_shopping">Shopping or entertainment</label>
+                    <input id="weekend_shopping" type="radio" name="weekend" value="Shopping or entertainment">
+                </fieldset>
+            </section>
+            
+
 
 
 
