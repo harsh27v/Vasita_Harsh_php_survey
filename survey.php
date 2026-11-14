@@ -75,23 +75,67 @@ $_SESSION['form_errors'] = [];
                 <?php if (count($errors) > 0 && $submittedEmail) {
                     echo 'value="' . $submittedEmail . '"';
                     } ?>
-                >
-                </div>
-                <div>
-                    <?php
-                        if (array_key_exists('age', $errors)) {
-                            echo '<p style="color:red">' . $errors['age'] . '</p>';
-                        }
-                    ?>
-                    <label for="age">3. What's your age?</label>
-                    <input id="age" name="age" type="text" placeholder="Enter your age"
-                        <?php
-                            if (count($errors) > 0 && $submittedAge) {
-                                echo 'value="' . $submittedAge . '"';
-                            }
-                        ?>
-                    >
-                </div>
+            >
+            </div>
+            <div>
+                <?php
+                    if (array_key_exists('age', $errors)) {
+                        echo '<p style="color:red">' . $errors['age'] . '</p>';
+                    }
+                ?>
+            <label for="age">3. What's your age?</label>
+            <input id="age" name="age" type="text" placeholder="Enter your age"
+                <?php
+                    if (count($errors) > 0 && $submittedAge) {
+                        echo 'value="' . $submittedAge . '"';
+                    }
+                ?>
+            >
+            </div>
+            <div>
+                <?php
+                    if (array_key_exists('profession', $errors)) {
+                        echo '<p style="color:red">' . $errors['profession'] . '</p>';
+                    }
+                ?>
+            <label for="profession">4. What's your profession?</label>
+            <input id="profession" name="profession" type="text" placeholder="Enter your profession"
+                <?php
+                    if (count($errors) > 0 && $submittedProfession) {
+                        echo 'value="' . $submittedProfession . '"';
+                    }
+                ?>
+            >
+            </div>
+            <div>
+                <?php
+                    if (array_key_exists('city', $errors)) {
+                        echo '<p style="color:red">' . $errors['city'] . '</p>';
+                    }
+                ?>
+            <label for="city">5. Which city do you live in?</label>
+            <input id="city" name="city" type="text" placeholder="Enter your city"
+                <?php
+                    if (count($errors) > 0 && $submittedCity) {
+                            echo 'value="' . $submittedCity . '"';
+                    }
+                ?>
+            >
+            </div>
+            <div>
+                <?php
+                    if (array_key_exists('hobby', $errors)) {
+                        echo '<p style="color:red">' . $errors['hobby'] . '</p>';
+                    }
+                ?>
+            <label for="hobby">6. What's your favourite hobby?</label>
+            <input id="hobby" name="hobby" type="text" placeholder="Enter your hobby"
+                <?php if (count($errors) > 0 && $submittedHobby) {
+                    echo 'value="' . $submittedHobby . '"';
+                } ?>
+            >
+            </div>
+        </section>
 
 
     
