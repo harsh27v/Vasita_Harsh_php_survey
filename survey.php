@@ -64,6 +64,34 @@ $_SESSION['form_errors'] = [];
                     ?>
                 >
             </div>
+            <div>
+                <?php
+                    if (array_key_exists('email', $errors)) {
+                        echo '<p style="color:red">' . $errors['email'] . '</p>';
+                    }
+                ?>
+                <label for="email">2. What's your email address?</label>
+                <input id="email" name="email" type="email" placeholder="youremail@email.com"
+                <?php if (count($errors) > 0 && $submittedEmail) {
+                    echo 'value="' . $submittedEmail . '"';
+                    } ?>
+                >
+                </div>
+                <div>
+                    <?php
+                        if (array_key_exists('age', $errors)) {
+                            echo '<p style="color:red">' . $errors['age'] . '</p>';
+                        }
+                    ?>
+                    <label for="age">3. What's your age?</label>
+                    <input id="age" name="age" type="text" placeholder="Enter your age"
+                        <?php
+                            if (count($errors) > 0 && $submittedAge) {
+                                echo 'value="' . $submittedAge . '"';
+                            }
+                        ?>
+                    >
+                </div>
 
 
     
