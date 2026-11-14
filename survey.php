@@ -246,6 +246,49 @@ $_SESSION['form_errors'] = [];
                     }?></textarea>
                 </div>
             </section>
+            <section class="form-section">
+                <h2>Your Daily Habits</h2>
+                <fieldset>
+                    <?php
+                        if (array_key_exists('exercise', $errors)) {
+                            echo '<p style="color:red">' . $errors['exercise'] . '</p>';
+                        }
+                    ?>
+                    <legend>12. How often do you exercise?</legend>
+
+                    <label for="exercise_daily">Every day</label>
+                    <input id="exercise_daily" type="radio" name="exercise" value="Every day">
+
+                    <label for="exercise_few_times">Sometimes a week</label>
+                    <input id="exercise_few_times" type="radio" name="exercise" value="Sometimes a week">
+
+                    <label for="exercise_weekly">Once a week</label>
+                    <input id="exercise_weekly" type="radio" name="exercise" value="Once a week">
+
+                    <label for="exercise_rarely">Rarely</label>
+                    <input id="exercise_rarely" type="radio" name="exercise" value="Rarely">
+                </fieldset>
+
+                <fieldset>
+                    <?php
+                        if (array_key_exists('relax', $errors)) {
+                            echo '<p style="color:red">' . $errors['relax'] . '</p>';
+                        }
+                    ?>
+                    <legend>13. What's your ways of relaxing?</legend>
+
+                    <label for="listening_music">Listening musics</label>
+                    <input id="listening_music" type="radio" name="relax" value="Listening musics">
+
+                    <label for="TV">Watching TV</label>
+                    <input id="TV" type="radio" name="relax" value="Watching TV">
+
+                    <label for="read">Reading</label>
+                    <input id="read" type="radio" name="relax" value="Reading">
+
+                    <label for="walk">Going for a walk</label>
+                    <input id="walk" type="radio" name="relax" value="Going for a walk">
+                </fieldset>
 
 
 
