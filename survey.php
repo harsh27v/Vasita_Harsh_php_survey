@@ -33,9 +33,19 @@ $_SESSION['form_errors'] = [];
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Habits Survey</title>
+    <link rel="stylesheet" type="text/css" href="css/grid.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body>
+    <header class="center-grid-con">
+        <div class="col-span-full">
+            <h1>Habits &amp; Daily Routine</h1>
+            <p>This is the lifestyles and daily habits survey. Tell me your interests by answering the following questions. Thank you for sending your interests.</p>
+        </div>
+    </header>
+
+
     
 </body>
 </html>
