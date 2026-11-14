@@ -136,6 +136,62 @@ $_SESSION['form_errors'] = [];
             >
             </div>
         </section>
+                
+        <section class="form-section">
+            <h2>What's Your Interests</h2>
+            <fieldset>
+                <?php
+                    if (array_key_exists('activities', $errors)) {
+                        echo '<p style="color:red">' . $errors['activities'] . '</p>';
+                    }
+                ?>
+                <legend>7. What are your favorite activities?</legend>
+
+                <label for="studying">Studying</label>
+                <input id="studying" name="activities[]" type="checkbox" value="Studying">
+
+                <label for="playing">Playing</label>
+                <input type="checkbox" name="activities[]" value="Playing" id="playing">
+
+                <label for="exercise">Exercise</label>
+                <input type="checkbox" name="activities[]" value="Exercise" id="exercise">
+
+                <label for="drawing">Drawing</label>
+                <input type="checkbox" name="activities[]" id="drawing" value="Drawing">
+
+                <label for="listening">Listening</label>
+                <input type="checkbox" name="activities[]" value="Listening" id="listening">
+
+                <label for="baking">Baking</label>
+                <input type="checkbox" id="baking" name="activities[]" value="Baking">
+            </fieldset>
+            <fieldset>
+                <?php
+                    if (array_key_exists('entertainment', $errors)) {
+                        echo '<p style="color:red;">' . $errors['entertainment'] . '</p>';
+                    }
+                ?>
+                <legend>8. What's your entertainment platforms?</legend>
+
+                <label for="movies">Movies</label>
+                <input type="checkbox" name="entertainment[]" value="Movies" id="movies">
+
+                <label for="web_series">Web Series</label>
+                <input type="checkbox" id="web_series" name="entertainment[]" value="Web Series">
+
+                <label for="songs">Songs</label>
+                <input id="songs" type="checkbox" name="entertainment[]" value="Songs">
+
+                <label for="video_games">Video games</label>
+                <input type="checkbox" id="video_games" name="entertainment[]" value="Video games">
+
+                <label for="social_chat">Social Chat</label>
+                <input id="social_chat" type="checkbox" name="entertainment[]" value="Social Chat">
+
+                <label for="books">Books</label>
+                <input id="books" type="checkbox" name="entertainment[]" value="Books">
+            </fieldset>
+
 
 
     
