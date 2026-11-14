@@ -53,16 +53,16 @@ $_SESSION['form_errors'] = [];
                 <?php
                     if (array_key_exists('name', $errors)) {
                         echo '<p style="color:red">' . $errors['name'] . '</p>';
-                        }
+                    }
                 ?>
-                <label for="name">1. What's your Name?</label>
-                <input id="name" name="name" type="text" placeholder="Enter your name"
-                    <?php
-                        if (count($errors) > 0 && $submittedName) {
-                            echo 'value="' . $submittedName . '"';
-                        }
-                    ?>
-                >
+            <label for="name">1. What's your Name?</label>
+            <input id="name" name="name" type="text" placeholder="Enter your name"
+                <?php
+                    if (count($errors) > 0 && $submittedName) {
+                        echo 'value="' . $submittedName . '"';
+                    }
+                ?>
+            >
             </div>
             <div>
                 <?php
@@ -217,9 +217,9 @@ $_SESSION['form_errors'] = [];
                 <label for="restaurants">Restaurants</label>
                 <input id="restaurants" type="checkbox" name="places[]" value="Restaurants">
             </fieldset>
-            </section>
+        </section>
 
-            <section class="form-section">
+        <section class="form-section">
                 <h2>Describe Us More</h2>
                 <div>
                     <?php
@@ -245,8 +245,8 @@ $_SESSION['form_errors'] = [];
                         echo $submittedFT;
                     }?></textarea>
                 </div>
-            </section>
-            <section class="form-section">
+        </section>
+        <section class="form-section">
                 <h2>Your Daily Habits</h2>
                 <fieldset>
                     <?php
@@ -330,13 +330,61 @@ $_SESSION['form_errors'] = [];
                     <label for="weekend_shopping">Shopping or entertainment</label>
                     <input id="weekend_shopping" type="radio" name="weekend" value="Shopping or entertainment">
                 </fieldset>
-            </section>
-            
+        </section>
+        <section class="form-section">
+                <h2>Additional Information</h2>
+                <div>
+                    <?php
+                        if (array_key_exists('telephone', $errors)) {
+                            echo '<p style="color:red">' . $errors['telephone'] . '</p>';
+                        }
+                    ?>
+                <label for="telephone">16. What's your phone number?</label>
+                <input id="telephone" name="telephone" type="tel" placeholder="222 222 2222"
+                    <?php
+                        if (count($errors) > 0 && $submittedTEL) {
+                            echo 'value="' . $submittedTEL . '"';
+                        }
+                    ?>
+                >
+                </div>
+                <div>
+                    <?php
+                        if (array_key_exists('birth_date', $errors)) {
+                            echo '<p style="color:red">' . $errors['birth_date'] . '</p>';
+                        }
+                    ?>
+                <label for="birth_date">17. What's your date of birth?</label>
+                <input id="birth_date" name="birth_date" type="date"
+                    <?php
+                        if (count($errors) > 0 && $submittedBT) {
+                            echo 'value="' . $submittedBT . '"';
+                        }
+                    ?>
+                >
+                </div>
+                <div>
+                    <?php
+                        if (array_key_exists('preferred_color', $errors)) {
+                            echo '<p style="color:red">' . $errors['preferred_color'] . '</p>';
+                        }
+                    ?>
+                <label for="preferred_color">18. What's your favourite colour?</label>
+                <input id="preferred_color" name="preferred_color" type="color"
+                    <?php
+                        if (count($errors) > 0 && $submittedColor) {
+                            echo 'value="' . $submittedColor . '"';
+                        }
+                    ?>
+                >
+                </div>
+        </section>
 
-
-
-
-
+        <footer>
+            <button type="submit">Send</button>
+        </footer>
+    </form>
+    </main>
     
 </body>
 </html>
