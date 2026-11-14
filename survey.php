@@ -191,6 +191,62 @@ $_SESSION['form_errors'] = [];
                 <label for="books">Books</label>
                 <input id="books" type="checkbox" name="entertainment[]" value="Books">
             </fieldset>
+            <fieldset>
+                <?php
+                    if (array_key_exists('places', $errors)) {
+                        echo '<p style="color:red">'. $errors['places'] .'</p>';
+                    }
+                ?>
+                <legend>9. What's your enjoyable visiting place?</legend>
+
+                <label for="parks">Parks</label>
+                <input type="checkbox" name="places[]" id="parks" value="Parks">
+
+                <label for="beaches">Beaches</label>
+                <input type="checkbox" name="places[]" value="Beaches" id="beaches">
+
+                <label for="shopping_malls">Shopping malls</label>
+                <input type="checkbox" name="places[]" id="shopping_malls" value="Shopping malls">
+
+                <label for="cinemas">Cinemas</label>
+                <input type="checkbox" name="places[]" value="Cinemas" id="cinemas">
+
+                <label for="museums">Museums</label>
+                <input id="museums" type="checkbox" name="places[]" value="Museums">
+
+                <label for="restaurants">Restaurants</label>
+                <input id="restaurants" type="checkbox" name="places[]" value="Restaurants">
+            </fieldset>
+            </section>
+
+            <section class="form-section">
+                <h2>Describe Us More</h2>
+                <div>
+                    <?php
+                        if (array_key_exists('routine_day', $errors)) {
+                            echo '<p style="color:red">' . $errors['routine_day'] . '</p>';
+                        }
+                    ?>
+                <label for="routine_day">10. Describe your routine day.</label>
+                <textarea id="routine_day" name="routine_day"><?php
+                if (count($errors) > 0 && $submittedRT) {
+                    echo $submittedRT;
+                }?></textarea>
+                </div>
+                <div>
+                    <?php
+                        if (array_key_exists('free_time', $errors)) {
+                            echo '<p style="color:red">' . $errors['free_time'] . '</p>';
+                        }
+                    ?>
+                <label for="free_time">11. Describe your free time?</label>
+                <textarea id="free_time" name="free_time"><?php
+                if (count($errors) > 0 && $submittedFT) {
+                        echo $submittedFT;
+                    }?></textarea>
+                </div>
+            </section>
+
 
 
 
