@@ -85,7 +85,7 @@ if (strlen($hobby) < 2 || strlen($hobby) > 50) {
 }
 
 // ACTIVITIES
-// Check that at least one answer is selected and that every answer is allowed.
+// Checking that at least one answer is selected and that every answer is allowed.
 $activities = $formInput['activities'] ?? [];
 
 $validActivities = ['Studying', 'Playing', 'Exercise', 'Drawing', 'Listening', 'Baking'];
@@ -229,7 +229,7 @@ if (!array_key_exists('telephone', $formInput)) {
     $errors['telephone'] = 'Telephone number is required!';
 }
 
-// Ensure the number entered into the telephone has 10 - 15 digits.
+// Ensuring that the number entered into the telephone has 10 - 15 digits.
 if (strlen($telephone) < 10 || strlen($telephone) > 15) {
     $errors['telephone'] = 'Please type a telephone number that uses 10-15 numbers!';
 }
@@ -253,7 +253,38 @@ if (!array_key_exists('preferred_color', $formInput)) {
     $errors['preferred_color'] = 'Please select a colour!';
 }
 
-// Make sure the color value is seven characters long.
+// Making sure the color value is seven characters long.
 if (strlen($preferredColor) !== 7) {
     $errors['preferred_color'] = 'Please select a colour!';
 }
+
+// Store errors to be able to show them on the survey page.
+$_SESSION['form_errors'] = $errors;
+
+// Send email if there are no validation errors.
+if (count($errors) === 0) {
+    $to = 'hello@email.com';
+    $subject = 'New Habits Survey Response';
+    $message = "Name: " . $name . "\n";
+    $message .= "Email: " . $email . "\n";
+    $message .= "Age: " . $age . "\n";
+    $message .= "Profession: " . $profession . "\n";
+    $message .= "City: " . $city . "\n";
+    $message .= "Hobby: " . $hobby . "\n";
+    $message .= "Routine Day: " . $routineDay . "\n";
+    $message .= "Free Time: " . $freeTime . "\n";
+    $message .= "Exercise: " . $exercise . "\n";
+    $message .= "Relax: " . $relax . "\n";
+    $message .= "Travel: " . $travel . "\n";
+    $message .= "Weekend: " . $weekend . "\n";
+    $message .= "Telephone: " . $telephone . "\n";
+    $message .= "Birth Date: " . $birthDate . "\n";
+    $message .= "Preferred Color: " . $preferredColor;
+
+    mail($to, $subject, $message);
+    $_SESSION['success'] = true;
+}
+
+// Go back to the survey page.
+header('Location: /php_survey/index.php');
+exit;
