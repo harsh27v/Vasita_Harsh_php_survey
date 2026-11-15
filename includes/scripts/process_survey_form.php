@@ -286,5 +286,5 @@ if (count($errors) === 0) {
 }
 
 // Go back to the survey page.
-header('Location: /php_survey/index.php');
+header('Location: /Vasita_Harsh_PHP_Survey_HW3/survey.php');
 exit;
