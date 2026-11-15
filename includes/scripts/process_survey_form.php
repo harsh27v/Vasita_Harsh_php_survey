@@ -83,3 +83,67 @@ if (!array_key_exists('hobby', $formInput)) {
 if (strlen($hobby) < 2 || strlen($hobby) > 50) {
     $errors['hobby'] = 'Hobby must be between 2 and 50 characters!';
 }
+
+// ACTIVITIES
+// Check that at least one answer is selected and that every answer is allowed.
+$activities = $formInput['activities'] ?? [];
+
+$validActivities = ['Studying', 'Playing', 'Exercise', 'Drawing', 'Listening', 'Baking'];
+
+if (!is_array($activities)) {
+    $errors['activities'] = 'Please select valid activities!';
+}
+
+if (is_array($activities)) {
+    if (count($activities) === 0) {
+        $errors['activities'] = 'Please select at least one activity!';
+    }
+
+    foreach ($activities as $activity) {
+        if (!in_array($activity, $validActivities)) {
+            $errors['activities'] = 'Please select valid activities!';
+        }
+    }
+}
+
+// ENTERTAINMENT
+$entertainment = $formInput['entertainment'] ?? [];
+
+$validEntertainment = array ('Movies', 'Web Series', 'Songs', 'Video games', 'Social Chat', 'Books');
+
+if (!is_array($entertainment)) {
+    $errors['entertainment'] = 'Please choose valid entertainment options!';
+}
+
+if (is_array($entertainment)) {
+    if (count($entertainment) === 0) {
+        $errors['entertainment'] = 'Please mark at least one!';
+    }
+
+    foreach ($entertainment as $option) {
+        if (!in_array($option, $validEntertainment)) {
+            $errors['entertainment'] = 'Please set a valid entertainment!';
+        }
+    }
+}
+
+// PLACES
+$places = $formInput['places'] ?? [];
+
+$validPlaces = ['Parks', 'Beaches', 'Shopping malls', 'Cinemas', 'Museums', 'Restaurants'];
+
+if (!is_array($places)) {
+    $errors['places'] = 'Please choose the valid places!';
+}
+
+if (is_array($places)) {
+    if (count($places) === 0) {
+        $errors['places'] = 'Please select at least one place!';
+    }
+
+    foreach( $places as $place) {
+        if (!in_array($place, $validPlaces)) {
+            $errors['places'] = 'Please select valid places!';
+        }
+    }
+}
