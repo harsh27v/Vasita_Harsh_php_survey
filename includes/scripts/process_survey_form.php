@@ -147,3 +147,77 @@ if (is_array($places)) {
         }
     }
 }
+
+// ROUTINE DAY
+$routineDay = $formInput['routine_day'] ?? '';
+
+if (!array_key_exists('routine_day', $formInput)) {
+    $errors['routine_day'] = 'Routine day must be specified!';
+}
+
+if (strlen($routineDay) < 10 || strlen($routineDay) > 500) {
+    $errors['routine_day'] = 'Answer should be between 10 and 500 characters!';
+}
+
+// FREE TIME
+$freeTime = $formInput['free_time'] ?? '';
+
+if (!array_key_exists('free_time', $formInput)) {
+    $errors['free_time'] = 'Free time is required!';
+}
+
+if (strlen($freeTime) < 10 || strlen($freeTime) > 500) {
+    $errors['free_time'] = 'Answer should be 10 to 500 characters long!';
+}
+
+// EXERCISE
+$exercise = $formInput['exercise'] ?? '';
+
+$validExercise = array ('Every day', 'Sometimes a week', 'Once a week', 'Rarely');
+
+if (!array_key_exists('exercise', $formInput)) {
+    $errors['exercise'] = 'Select an exercise answer to the question!';
+}
+
+if (!in_array($exercise, $validExercise)) {
+    $errors['exercise'] = 'Select an appropriate exercise response!';
+}
+
+// RELAX
+$relax = $formInput['relax'] ?? '';
+
+$validRelax = ['Listening musics', 'Watching TV', 'Reading', 'Going for a walk'];
+
+if (!array_key_exists('relax', $formInput)) {
+    $errors['relax'] = 'There should be a relaxing activity selected!';
+}
+
+if (!in_array($relax, $validRelax)) {
+    $errors['relax'] = 'Select a appropriate relaxing activity!';
+}
+
+// TRAVEL
+$travel = $formInput['travel'] ?? '';
+
+$validTravel = array('Very often', 'Sometimes in year', 'Once a year', 'Rarely');
+
+if (!array_key_exists('travel', $formInput)) {
+    $errors['travel'] = 'You must choose an answer to the travel question!';
+}
+
+if (!in_array($travel, $validTravel)) {
+    $errors['travel'] = 'Select a valid response to the travel question!';
+}
+
+// WEEKEND
+$weekend = $formInput['weekend'] ?? '';
+
+$validWeekend = ['Staying at home', 'Meeting friends', 'Going outdoors', 'Shopping or entertainment'];
+
+if (!array_key_exists('weekend', $formInput)) {
+    $errors['weekend'] = 'Please choose a weekend answer!';
+}
+
+if (!in_array($weekend, $validWeekend)) {
+    $errors['weekend'] = 'Please select a correct weekend answer!';
+}
