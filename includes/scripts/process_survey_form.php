@@ -221,3 +221,39 @@ if (!array_key_exists('weekend', $formInput)) {
 if (!in_array($weekend, $validWeekend)) {
     $errors['weekend'] = 'Please select a correct weekend answer!';
 }
+
+// TELEPHONE
+$telephone = $formInput['telephone'] ?? '';
+
+if (!array_key_exists('telephone', $formInput)) {
+    $errors['telephone'] = 'Telephone number is required!';
+}
+
+// Ensure the number entered into the telephone has 10 - 15 digits.
+if (strlen($telephone) < 10 || strlen($telephone) > 15) {
+    $errors['telephone'] = 'Please type a telephone number that uses 10-15 numbers!';
+}
+
+// BIRTH DATE
+$birthDate = $formInput['birth_date'] ?? '';
+
+if (!array_key_exists('birth_date', $formInput)) {
+    $errors['birth_date'] = 'The birth date is required!';
+}
+
+// Check that the birth date has 10 characters.
+if (strlen($birthDate) !== 10) {
+    $errors['birth_date'] = 'The birth date is not valid!';
+}
+
+// PREFERRED COLOR
+$preferredColor = $formInput['preferred_color'] ?? '';
+
+if (!array_key_exists('preferred_color', $formInput)) {
+    $errors['preferred_color'] = 'Please select a colour!';
+}
+
+// Make sure the color value is seven characters long.
+if (strlen($preferredColor) !== 7) {
+    $errors['preferred_color'] = 'Please select a colour!';
+}
